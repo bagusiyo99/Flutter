@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:gudang/app/data/login_provider.dart';
 
@@ -18,6 +19,7 @@ class LoginController extends GetxController {
         colorText: Colors.white,
       );
     } else {
+      EasyLoading.show(); // loading awal
       var data = {
         "email": email,
         "password": password,
@@ -36,6 +38,7 @@ class LoginController extends GetxController {
             colorText: Colors.white,
           );
         }
+        EasyLoading.dismiss(); //loading akhir
       });
     }
   }
