@@ -42,7 +42,7 @@ class LoginController extends GetxController {
 
           Get.snackbar(
             "Success", "Login Berhasil",
-            backgroundColor: Colors.green, //warna body
+            backgroundColor: Color.fromARGB(255, 8, 59, 244), //warna body
             colorText: Colors.white,
           );
         } else {
