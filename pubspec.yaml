@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   flutter_easyloading: ^3.0.5
   sp_util: ^2.0.3
+  intl: ^0.17.0
 
 dev_dependencies: 
   flutter_lints: ^2.0.0

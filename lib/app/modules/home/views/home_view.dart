@@ -20,16 +20,16 @@ class HomeView extends GetView<HomeController> {
         child: Center(
           child: Column(
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Container(
                 margin: const EdgeInsets.only(
-                  top: 10,
+                  top: 5,
                   bottom: 10,
                 ), // Atur margin atas dan bawah di sini
                 child: Image.asset(
                   "gambar/login.png",
-                  width: 250,
-                  height: 250,
+                  width: 300,
+                  height: 300,
                 ),
               ),
               Container(
@@ -38,7 +38,7 @@ class HomeView extends GetView<HomeController> {
                   bottom: 20,
                 ), // Atur margin atas dan bawah di sini
                 child: const Text(
-                  "kumpulan gudang",
+                  "Aplikasi Gudang",
                   style: TextStyle(
                     fontSize: 24, // Ukuran font
                     fontWeight: FontWeight.bold, // Ketebalan font
@@ -53,7 +53,7 @@ class HomeView extends GetView<HomeController> {
                   bottom: 20,
                 ), // Atur margin atas dan bawah di sini
                 child: const Text(
-                  "data pendapatan dan penjualanan",
+                  "Data pendapatan dan penjualanan toko",
                   style: TextStyle(
                     fontSize: 18, // Ukuran font
                     fontWeight: FontWeight.normal, // Ketebalan font

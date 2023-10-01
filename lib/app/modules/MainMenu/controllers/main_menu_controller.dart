@@ -3,39 +3,49 @@ import 'package:gudang/app/data/menu_provider.dart';
 
 class MainMenuController extends GetxController {
   RxDouble totalHargaKeseluruhan = 0.0.obs;
-
-  // ignore: annotate_overrides
+  RxList<dynamic> data = <dynamic>[].obs;
+  @override
   void onInit() {
     super.onInit();
-    fetchDataAndCalculateTotal(); // Panggil metode ini saat controller diinisialisasi
+    fetchDataAndCalculateTotal();
   }
 
   void fetchDataAndCalculateTotal() async {
-    final response = await MenuProvider().menu();
-    if (response.status.isOk) {
-      final data = response.body;
-      double total = 0;
+    try {
+      final response = await MenuProvider().menu();
 
-      if (data != null && data.isNotEmpty) {
-        for (var item in data) {
-          final totalHargaRaw = item['total_harga'];
-          if (totalHargaRaw is String) {
-            final totalHarga = double.tryParse(totalHargaRaw) ?? 0.0;
-            total += totalHarga;
-          } else if (totalHargaRaw is int) {
-            final totalHarga = totalHargaRaw.toDouble();
-            total += totalHarga;
+      if (response.status.isOk) {
+        final responseData = response.body;
+
+        if (responseData != null && responseData.isNotEmpty) {
+          double total = 0;
+
+          for (var item in responseData) {
+            final totalHargaRaw = item['total_harga'];
+
+            if (totalHargaRaw is String) {
+              final totalHarga = double.tryParse(totalHargaRaw) ?? 0.0;
+              total += totalHarga;
+            } else if (totalHargaRaw is int) {
+              final totalHarga = totalHargaRaw.toDouble();
+              total += totalHarga;
+            }
           }
+
+          // Bersihkan data sebelum mengisinya dengan data baru
+          data.clear();
+          // Tambahkan data baru dari API
+          data.addAll(responseData);
+          // Perbarui total harga keseluruhan
+          totalHargaKeseluruhan.value = total;
+        } else {
+          print('Data kosong');
         }
       } else {
-        // Tidak ada data yang ditemukan, tambahkan penanganan kesalahan di sini
-        print('Data kosong');
+        print('Terjadi kesalahan saat mengambil data dari API');
       }
-
-      totalHargaKeseluruhan.value = total;
-    } else {
-      // Handle error jika ada
-      print('Terjadi kesalahan saat mengambil data dari API');
+    } catch (e) {
+      print('Terjadi kesalahan: $e');
     }
   }
 }
