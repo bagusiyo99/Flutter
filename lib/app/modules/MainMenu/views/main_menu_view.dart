@@ -99,7 +99,7 @@ class MainMenuView extends GetView<MainMenuController> {
                         child: const Center(
                           child: Icon(
                             Icons.check_circle,
-                            size: 25,
+                            size: 35,
                             color: Colors.white,
                           ),
                         ),
@@ -119,7 +119,7 @@ class MainMenuView extends GetView<MainMenuController> {
                         child: const Center(
                           child: Icon(
                             Icons.manage_accounts,
-                            size: 25,
+                            size: 35,
                             color: Colors.white,
                           ),
                         ),
@@ -139,7 +139,7 @@ class MainMenuView extends GetView<MainMenuController> {
                         child: const Center(
                           child: Icon(
                             Icons.list,
-                            size: 25,
+                            size: 35,
                             color: Colors.white,
                           ),
                         ),
@@ -159,7 +159,7 @@ class MainMenuView extends GetView<MainMenuController> {
                         child: const Center(
                           child: Icon(
                             Icons.payment,
-                            size: 25,
+                            size: 35,
                             color: Colors.white,
                           ),
                         ),
