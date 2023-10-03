@@ -10,7 +10,7 @@ class MainMenuView extends GetView<MainMenuController> {
 
   String formatCurrency(double amount) {
     final currencyFormat =
-        NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ');
+        NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ', decimalDigits: 0);
     return currencyFormat.format(amount);
   }
 
@@ -172,7 +172,7 @@ class MainMenuView extends GetView<MainMenuController> {
               const Text(
                 'Daftar Transaksi',
                 style: TextStyle(
-                  color: Color.fromARGB(255, 73, 73, 73),
+                  color: Color.fromARGB(355, 73, 73, 73),
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
