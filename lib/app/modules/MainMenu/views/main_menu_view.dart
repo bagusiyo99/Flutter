@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:sp_util/sp_util.dart';
 import 'package:intl/intl.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/main_menu_controller.dart';
 
 class MainMenuView extends GetView<MainMenuController> {
@@ -110,7 +111,10 @@ class MainMenuView extends GetView<MainMenuController> {
                     width: 80,
                     height: 80,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(
+                            Routes.BARANG); // Navigasi ke halaman barang
+                      },
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.green,

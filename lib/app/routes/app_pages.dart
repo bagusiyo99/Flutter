@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/Barang/bindings/barang_binding.dart';
+import '../modules/Barang/views/barang_view.dart';
 import '../modules/MainMenu/bindings/main_menu_binding.dart';
 import '../modules/MainMenu/views/main_menu_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.MAIN_MENU,
       page: () => const MainMenuView(),
       binding: MainMenuBinding(),
+    ),
+    GetPage(
+      name: _Paths.BARANG,
+      page: () => const BarangView(),
+      binding: BarangBinding(),
     ),
   ];
 }
