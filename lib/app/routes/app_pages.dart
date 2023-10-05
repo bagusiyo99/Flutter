@@ -4,6 +4,8 @@ import '../modules/Barang/bindings/barang_binding.dart';
 import '../modules/Barang/views/barang_view.dart';
 import '../modules/MainMenu/bindings/main_menu_binding.dart';
 import '../modules/MainMenu/views/main_menu_view.dart';
+import '../modules/Pelanggan/bindings/pelanggan_binding.dart';
+import '../modules/Pelanggan/views/pelanggan_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.BARANG,
       page: () => const BarangView(),
       binding: BarangBinding(),
+    ),
+    GetPage(
+      name: _Paths.PELANGGAN,
+      page: () => const PelangganView(),
+      binding: PelangganBinding(),
     ),
   ];
 }
