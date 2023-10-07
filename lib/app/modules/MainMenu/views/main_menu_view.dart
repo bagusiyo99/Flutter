@@ -91,7 +91,10 @@ class MainMenuView extends GetView<MainMenuController> {
                     width: 80,
                     height: 80,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(
+                            Routes.BARANG); // Navigasi ke halaman barang
+                      },
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.green,
@@ -113,7 +116,7 @@ class MainMenuView extends GetView<MainMenuController> {
                     child: InkWell(
                       onTap: () {
                         Get.toNamed(
-                            Routes.BARANG); // Navigasi ke halaman barang
+                            Routes.PELANGGAN); // Navigasi ke halaman barang
                       },
                       child: Container(
                         decoration: BoxDecoration(
