@@ -177,7 +177,7 @@ class MainMenuView extends GetView<MainMenuController> {
               ),
               const SizedBox(height: 20),
               const Text(
-                'Daftar Transaksi',
+                'Daftar Transaksi Barang',
                 style: TextStyle(
                   color: Color.fromARGB(355, 73, 73, 73),
                   fontSize: 20,
